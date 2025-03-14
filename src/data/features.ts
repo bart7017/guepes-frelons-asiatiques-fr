@@ -23,7 +23,7 @@ export const featureLists: Record<string, FeatureList> = {
         icon: Zap,
         title: "Intervention Rapide",
         description:
-          "Équipe mobilisable en 24-48h sur l'ensemble du territoire français",
+          "Équipe mobilisable en 24-48h sur l'ensemble de l'Île-de-France, français",
       },
       {
         icon: Shield,

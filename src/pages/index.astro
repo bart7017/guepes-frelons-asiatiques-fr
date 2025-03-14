@@ -15,12 +15,11 @@ import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
 import styleGuideImage from '../assets/images/home/developer.jpg';
 
-const seoTitle = "Modern, High-Performance Astro Theme";
-const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
-
+const seoTitle = "Destruction de Nids de Guêpes et Frelons en Île-de-France | 77";
+const seoDescription = "Service professionnel d'élimination de nids de guêpes et frelons en Île-de-France. Intervention rapide dans le 77, Melun et environs par des techniciens certifiés.";
 const heroContent = {
     title: 'Destruction Professionnelle de Nids de Guêpes et Frelons',
-    description: 'Intervention rapide et sécurisée sur tout le territoire français par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.',
+    description: 'Intervention rapide et sécurisée en Île-de-France, par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.',
     buttons: [
         {
             text: 'Intervention d\'urgence',
@@ -52,58 +51,57 @@ const featuresSection = {
 }
 
 const FooterCta = {
-    eyebrow: "Join The Community",
-    title: ' Start Building With Titan Core Today',
-    description: 'Titan Core is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
+    eyebrow: "Intervention Rapide",
+    title: 'Éliminez vos nids de guêpes dès aujourd\'hui',
+    description: 'Ne prenez pas de risques inutiles avec les guêpes et frelons. Nos techniciens certifiés interviennent rapidement dans tout le 77 et l\'Île-de-France pour une élimination sécurisée des nids.',
     hideCta: false,
     button: {
-        text: 'Download Titan Core',
-        link: 'https://github.com/rspisarski/titan-core',
-        target: '_blank'
+        text: 'Demander un devis gratuit',
+        link: '/contact',
+        target: '_self'
     }
 }
 
 const styleGuideSection = {
-    eyebrow: "Design System",
-    headline: "Consistent & Beautiful Components",
-    description: "Titan Core comes with a complete style guide to ensure your projects maintain visual consistency. From typography to interactive elements, we've carefully crafted each component.",
+    eyebrow: "Notre expertise",
+    headline: "Une méthode éprouvée et sécurisée",
+    description: "Notre équipe d'experts intervient dans le 77 et toute l'Île-de-France pour éliminer efficacement les nids de guêpes et frelons. Nous utilisons du matériel professionnel et des produits homologués pour garantir votre sécurité.",
     image: {
-        src: styleGuideImage,
-        alt: "Featured image"
+        src: styleGuideImage, // Remplacez par une image montrant un technicien en tenue de protection
+        alt: "Technicien en intervention sur un nid de guêpes"
     },
     buttons: [
         {
-            text: "Explore Style Guide",
-            link: "/style-guide",
+            text: "Nos méthodes d'intervention",
+            link: "/methodes",
             variant: "primary" as const
         }
     ]
 }
 
 const sideBySideStats = {
-    eyebrow: "Stats",
-    title: "Built for Speed and Flexibility",
-    description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+    eyebrow: "Notre Efficacité",
+    title: "Des résultats prouvés contre les nids de guêpes",
+    description: "Notre expertise dans la destruction des nids de guêpes et frelons s'appuie sur des méthodes éprouvées et un matériel professionnel. Nous intervenons rapidement pour garantir votre sécurité.",
     variant: 'side-by-side' as const,
     stats: statsLists.withContent.stats,
     content: {
-        title: "Built for Speed and Flexibility",
-        description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+        title: "Spécialistes de la destruction de nids depuis 15 ans",
+        description: "Que le nid soit situé sous toiture, dans un mur, dans le sol ou dans un arbre, notre équipe possède l'expertise nécessaire pour le localiser et l'éliminer en toute sécurité, partout en Seine-et-Marne et en Île-de-France.",
         button: {
-            text: "Discover Titan Core",
-            link: "/theme-info",
+            text: "Découvrir notre expertise",
+            link: "/a-propos",
             variant: "primary" as const
         }
     }
 };
-
 const mainCta = {
-    eyebrow: "Build Blocks",
-    title: "Ready-to-Use Components",
-    description: "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
+    eyebrow: "Besoin d'Aide Urgente ?",
+    title: "Nid de guêpes ou frelons à éliminer ?",
+    description: "Les nids de guêpes représentent un danger réel pour vous et votre famille. Ne tentez pas de les éliminer vous-même. Nos techniciens interviennent avec le matériel adapté pour une destruction sécurisée et efficace de tous types de nids.",
     button: {
-        text: "View All Components",
-        link: "/components",
+        text: "Contacter un spécialiste",
+        link: "/contact",
         variant: "primary" as const,
         target: "_self" as const
     }
@@ -111,24 +109,24 @@ const mainCta = {
 
 
 const logosSection = {
-    eyebrow: "Our Clients",
+    eyebrow: "Ils nous font confiance",
     logos: logoLists.main.logos
 }
 
 const faqsSection = {
-    eyebrow: "FAQs",
-    title: 'Frequently Asked Questions',
-    description: 'Find answers to common questions about our platform and services.',
+    eyebrow: "Questions fréquentes",
+    title: 'Ce que vous devez savoir sur les nids de guêpes',
+    description: 'Trouvez des réponses aux questions les plus fréquentes concernant les nids de guêpes et notre service d\'élimination.',
     faqs: faqLists.main.faqs
 }
 
 const recentPostsSection = {
-    eyebrow: "LATEST INSIGHTS",
-    title: " Learn From Our Experience",
-    description: "Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.",
+    eyebrow: "CONSEILS D'EXPERTS",
+    title: "Tout savoir sur les guêpes et frelons",
+    description: "Découvrez nos articles sur la prévention des nids de guêpes, les risques liés aux piqûres, et comment identifier les différentes espèces de guêpes et frelons en Île-de-France.",
     button: {
-            text: "View All Posts",
-            link: "/blog",
+        text: "Voir tous nos conseils",
+        link: "/blog",
         variant: "primary" as const
     }
 }
