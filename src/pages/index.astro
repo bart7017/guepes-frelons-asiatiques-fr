@@ -19,32 +19,34 @@ const seoTitle = "Modern, High-Performance Astro Theme";
 const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
 
 const heroContent = {
-    title: 'The Foundation for Beautiful Astro JS Websites',
-    description: 'Titan Core is a minimal, performance-focused Astro JS theme that serves as the perfect foundation for your next web project. Built with clean code and modern best practices, it\'s designed to be extended and customized to your specific needs.',
+    title: 'Destruction Professionnelle de Nids de Guêpes et Frelons',
+    description: 'Intervention rapide et sécurisée sur tout le territoire français par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.',
     buttons: [
         {
-            text: 'Get Started',
+            text: 'Intervention d\'urgence',
             link: '/contact',
+            variant: 'primary',
             target: '_self'
         },
         {
-            text: 'View on GitHub',
-            link: 'https://github.com/rspisarski/titan-core',
-            target: '_blank'
+            text: 'Nos tarifs',
+            link: '/tarifs',
+            variant: 'secondary',
+            target: '_self'
         }
     ],
-    backgroundImage: heroImage,
-    overlayOpacity: 0.2
+    backgroundImage: heroImage, // Remplacez par votre image d'un nid de guêpes
+    overlayOpacity: 0.12
 }
 
 const featuresSection = {
-    eyebrow: "CORE FEATURES",
-    title: "Everything You Need, Nothing You Don't",
-    description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
+    eyebrow: "NOS SERVICES",
+    title: "Destruction Professionnelle de Nids de Guêpes",
+    description: "Service rapide et efficace d'élimination de nids de guêpes et frelons en Île-de-France, spécialisé dans le département 77 et la région de Melun.",
     features: featureLists.main.features,
     button: {
-        text: "View Theme Info",
-        link: "/theme-info",
+        text: "Demander une intervention",
+        link: "/contact",
         variant: "primary" as const
     }
 }

@@ -3,16 +3,24 @@ import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
 
 interface HeroContent {
-    title: string;
-    description: string;
-        buttons?: {
-        text: string;
-        link: string;
-        variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
-        target?: string;
-    }[];
-    backgroundImage?: string | any; // Using any for now to handle both string paths and imported images
-    overlayOpacity?: number; // Value between 0 and 1
+    title: 'Destruction Professionnelle de Nids de Guêpes et Frelons',
+    description: 'Intervention rapide et sécurisée sur tout le territoire français par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.',
+    buttons: [
+        {
+            text: 'Intervention d\'urgence',
+            link: '/contact',
+            variant: 'primary',
+            target: '_self'
+        },
+        {
+            text: 'Nos tarifs',
+            link: '/tarifs',
+            variant: 'secondary',
+            target: '_self'
+        }
+    ],
+    backgroundImage: heroImage, // Remplacez par votre image d'un nid de guêpes
+    overlayOpacity: 0.5
 }
 
 interface Props {
