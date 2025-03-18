@@ -1,144 +1,335 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Hero from '@components/sections/Hero.astro';
-import SplitPanel from '@components/sections/SplitPanel.astro';
-import Features from '@components/sections/Features.astro';
-import Stats from '@components/sections/Stats.astro';
-import { featureLists } from '@data/features';
-import { statsLists } from '@data/stats';
-import Logos from '@components/sections/Logos.astro';
-import { logoLists } from '@data/logos';
-import CtaBanner from '@components/sections/CtaBanner.astro';
-import Faqs from '@components/sections/Faqs.astro';
-import { faqLists } from '@data/faqs';
-import RecentPosts from '@components/sections/RecentPosts.astro';
-import heroImage from '../assets/images/home/default-hero-2.jpg';
-import styleGuideImage from '../assets/images/home/developer.jpg';
-
-const seoTitle = "Destruction de Nids de Guêpes et Frelons en Île-de-France | 77";
-const seoDescription = "Service professionnel d'élimination de nids de guêpes et frelons en Île-de-France. Intervention rapide dans le 77, Melun et environs par des techniciens certifiés.";
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/sections/Hero.astro";
+import SplitPanel from "@components/sections/SplitPanel.astro";
+import Features from "@components/sections/Features.astro";
+import Stats from "@components/sections/Stats.astro";
+import { featureLists } from "@data/features";
+import { statsLists } from "@data/stats";
+import Logos from "@components/sections/Logos.astro";
+import { logoLists } from "@data/logos";
+import CtaBanner from "@components/sections/CtaBanner.astro";
+import Faqs from "@components/sections/Faqs.astro";
+import { faqLists } from "@data/faqs";
+import RecentPosts from "@components/sections/RecentPosts.astro";
+import heroImage from "../assets/images/home/default-hero-2.jpg";
+import styleGuideImage from "../assets/images/home/developer.jpg";
+import {
+  Shield,
+  Bug,
+  Clock,
+  AlertTriangle,
+  MapPin,
+  ThumbsUp,
+} from "lucide-astro";
+const seoTitle =
+  "Destruction de Nids de Guêpes et Frelons en Île-de-France | 77";
+const seoDescription =
+  "Service professionnel d'élimination de nids de guêpes et frelons en Île-de-France. Intervention rapide dans le 77, Melun et environs par des techniciens certifiés.";
 const heroContent = {
-    title: 'Destruction Professionnelle de Nids de Guêpes et Frelons',
-    description: 'Intervention rapide et sécurisée en Île-de-France, par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.',
-    buttons: [
-        {
-            text: 'Intervention d\'urgence',
-            link: '/contact',
-            variant: 'primary',
-            target: '_self'
-        },
-        {
-            text: 'Nos tarifs',
-            link: '/tarifs',
-            variant: 'secondary',
-            target: '_self'
-        }
-    ],
-    backgroundImage: heroImage, // Remplacez par votre image d'un nid de guêpes
-    overlayOpacity: 0.12
-}
+  title: "Destruction Professionnelle de Nids de Guêpes et Frelons",
+  description:
+    "Intervention rapide et sécurisée en Île-de-France, par des techniciens certifiés. Protégez votre famille et votre propriété des risques liés aux nids de guêpes avec notre expertise de plus de 15 ans.",
+  buttons: [
+    {
+      text: "Intervention d'urgence",
+      link: "/contact",
+      variant: "primary",
+      target: "_self",
+    },
+    {
+      text: "Nos tarifs",
+      link: "/tarifs",
+      variant: "secondary",
+      target: "_self",
+    },
+  ],
+  backgroundImage: heroImage, // Remplacez par votre image d'un nid de guêpes
+  overlayOpacity: 0.12,
+};
 
 const featuresSection = {
-    eyebrow: "NOS SERVICES",
-    title: "Destruction Professionnelle de Nids de Guêpes",
-    description: "Service rapide et efficace d'élimination de nids de guêpes et frelons en Île-de-France, spécialisé dans le département 77 et la région de Melun.",
-    features: featureLists.main.features,
-    button: {
-        text: "Demander une intervention",
-        link: "/contact",
-        variant: "primary" as const
-    }
-}
+  eyebrow: "NOS SERVICES",
+  title: "Destruction Professionnelle de Nids de Guêpes",
+  description:
+    "Service rapide et efficace d'élimination de nids de guêpes et frelons en Île-de-France, spécialisé dans le département 77 et la région de Melun.",
+  features: featureLists.main.features,
+  button: {
+    text: "Demander une intervention",
+    link: "/contact",
+    variant: "primary" as const,
+  },
+};
 
 const FooterCta = {
-    eyebrow: "Intervention Rapide",
-    title: 'Éliminez vos nids de guêpes dès aujourd\'hui',
-    description: 'Ne prenez pas de risques inutiles avec les guêpes et frelons. Nos techniciens certifiés interviennent rapidement dans tout le 77 et l\'Île-de-France pour une élimination sécurisée des nids.',
-    hideCta: false,
-    button: {
-        text: 'Demander un devis gratuit',
-        link: '/contact',
-        target: '_self'
-    }
-}
+  eyebrow: "Intervention Rapide",
+  title: "Éliminez vos nids de guêpes dès aujourd'hui",
+  description:
+    "Ne prenez pas de risques inutiles avec les guêpes et frelons. Nos techniciens certifiés interviennent rapidement dans tout le 77 et l'Île-de-France pour une élimination sécurisée des nids.",
+  hideCta: false,
+  button: {
+    text: "Demander un devis gratuit",
+    link: "/contact",
+    target: "_self",
+  },
+};
 
 const styleGuideSection = {
-    eyebrow: "Notre expertise",
-    headline: "Une méthode éprouvée et sécurisée",
-    description: "Notre équipe d'experts intervient dans le 77 et toute l'Île-de-France pour éliminer efficacement les nids de guêpes et frelons. Nous utilisons du matériel professionnel et des produits homologués pour garantir votre sécurité.",
-    image: {
-        src: styleGuideImage, // Remplacez par une image montrant un technicien en tenue de protection
-        alt: "Technicien en intervention sur un nid de guêpes"
+  eyebrow: "Notre expertise",
+  headline: "Une méthode éprouvée et sécurisée",
+  description:
+    "Notre équipe d'experts intervient dans le 77 et toute l'Île-de-France pour éliminer efficacement les nids de guêpes et frelons. Nous utilisons du matériel professionnel et des produits homologués pour garantir votre sécurité.",
+  image: {
+    src: styleGuideImage, // Remplacez par une image montrant un technicien en tenue de protection
+    alt: "Technicien en intervention sur un nid de guêpes",
+  },
+  buttons: [
+    {
+      text: "Nos méthodes d'intervention",
+      link: "/methodes",
+      variant: "primary" as const,
     },
-    buttons: [
-        {
-            text: "Nos méthodes d'intervention",
-            link: "/methodes",
-            variant: "primary" as const
-        }
-    ]
-}
+  ],
+};
 
 const sideBySideStats = {
-    eyebrow: "Notre Efficacité",
-    title: "Des résultats prouvés contre les nids de guêpes",
-    description: "Notre expertise dans la destruction des nids de guêpes et frelons s'appuie sur des méthodes éprouvées et un matériel professionnel. Nous intervenons rapidement pour garantir votre sécurité.",
-    variant: 'side-by-side' as const,
-    stats: statsLists.withContent.stats,
-    content: {
-        title: "Spécialistes de la destruction de nids depuis 15 ans",
-        description: "Que le nid soit situé sous toiture, dans un mur, dans le sol ou dans un arbre, notre équipe possède l'expertise nécessaire pour le localiser et l'éliminer en toute sécurité, partout en Seine-et-Marne et en Île-de-France.",
-        button: {
-            text: "Découvrir notre expertise",
-            link: "/a-propos",
-            variant: "primary" as const
-        }
-    }
+  eyebrow: "Notre Efficacité",
+  title: "Des résultats prouvés contre les nids de guêpes",
+  description:
+    "Notre expertise dans la destruction des nids de guêpes et frelons s'appuie sur des méthodes éprouvées et un matériel professionnel. Nous intervenons rapidement pour garantir votre sécurité.",
+  variant: "side-by-side" as const,
+  stats: statsLists.withContent.stats,
+  content: {
+    title: "Spécialistes de la destruction de nids depuis 15 ans",
+    description:
+      "Que le nid soit situé sous toiture, dans un mur, dans le sol ou dans un arbre, notre équipe possède l'expertise nécessaire pour le localiser et l'éliminer en toute sécurité, partout en Seine-et-Marne et en Île-de-France.",
+    button: {
+      text: "Découvrir notre expertise",
+      link: "/a-propos",
+      variant: "primary" as const,
+    },
+  },
 };
 const mainCta = {
-    eyebrow: "Besoin d'Aide Urgente ?",
-    title: "Nid de guêpes ou frelons à éliminer ?",
-    description: "Les nids de guêpes représentent un danger réel pour vous et votre famille. Ne tentez pas de les éliminer vous-même. Nos techniciens interviennent avec le matériel adapté pour une destruction sécurisée et efficace de tous types de nids.",
-    button: {
-        text: "Contacter un spécialiste",
-        link: "/contact",
-        variant: "primary" as const,
-        target: "_self" as const
-    }
+  eyebrow: "Besoin d'Aide Urgente ?",
+  title: "Nid de guêpes ou frelons à éliminer ?",
+  description:
+    "Les nids de guêpes représentent un danger réel pour vous et votre famille. Ne tentez pas de les éliminer vous-même. Nos techniciens interviennent avec le matériel adapté pour une destruction sécurisée et efficace de tous types de nids.",
+  button: {
+    text: "Contacter un spécialiste",
+    link: "/contact",
+    variant: "primary" as const,
+    target: "_self" as const,
+  },
 };
 
-
 const logosSection = {
-    eyebrow: "Ils nous font confiance",
-    logos: logoLists.main.logos
-}
+  eyebrow: "Ils nous font confiance",
+  logos: logoLists.main.logos,
+};
 
 const faqsSection = {
-    eyebrow: "Questions fréquentes",
-    title: 'Ce que vous devez savoir sur les nids de guêpes',
-    description: 'Trouvez des réponses aux questions les plus fréquentes concernant les nids de guêpes et notre service d\'élimination.',
-    faqs: faqLists.main.faqs
-}
+  eyebrow: "Questions fréquentes",
+  title: "Ce que vous devez savoir sur les nids de guêpes",
+  description:
+    "Trouvez des réponses aux questions les plus fréquentes concernant les nids de guêpes et notre service d'élimination.",
+  faqs: faqLists.main.faqs,
+};
 
 const recentPostsSection = {
-    eyebrow: "CONSEILS D'EXPERTS",
-    title: "Tout savoir sur les guêpes et frelons",
-    description: "Découvrez nos articles sur la prévention des nids de guêpes, les risques liés aux piqûres, et comment identifier les différentes espèces de guêpes et frelons en Île-de-France.",
-    button: {
-        text: "Voir tous nos conseils",
-        link: "/blog",
-        variant: "primary" as const
-    }
-}
+  eyebrow: "CONSEILS D'EXPERTS",
+  title: "Tout savoir sur les guêpes et frelons",
+  description:
+    "Découvrez nos articles sur la prévention des nids de guêpes, les risques liés aux piqûres, et comment identifier les différentes espèces de guêpes et frelons en Île-de-France.",
+  button: {
+    text: "Voir tous nos conseils",
+    link: "/blog",
+    variant: "primary" as const,
+  },
+};
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
-    <Hero content={heroContent} />
-    <Features content={featuresSection} padding="base" background="light" />
-    <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/>
-    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" />
-    <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
-    <Logos content={logosSection} background="base" padding='small'/>
-    <Stats content={sideBySideStats} background='dark' padding="base"/>
-    <Faqs content={faqsSection} background="base" padding="base" />
+  <Hero content={heroContent} />
+  <Features content={featuresSection} padding="base" background="light" />
+
+
+<RecentPosts
+  content={recentPostsSection}
+  background="base"
+  padding="base"
+  postsToShow={3}
+  category="Theme Usage"
+/>
+<SplitPanel
+  content={styleGuideSection}
+  imagePosition="right"
+  background="light"
+  padding="base"
+/>
+<CtaBanner
+  content={mainCta}
+  variant="contained"
+  background="light"
+  paddingBottom="base"
+/>
+<Logos content={logosSection} background="base" padding="small" />
+<Stats content={sideBySideStats} background="dark" padding="base" />  <div class="bg-background-light py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl lg:text-center">
+        <h2 class="text-base/7 font-semibold text-primary">
+          Experts en Seine-et-Marne
+        </h2>
+        <p
+          class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance"
+        >
+          Pourquoi faire appel à un professionnel pour détruire un nid de guêpes
+        </p>
+        <p class="mt-6 text-lg/8 text-gray-600">
+          L'élimination d'un nid de guêpes ou de frelons présente des risques
+          réels pour votre sécurité. Les guêpes et frelons peuvent devenir
+          extrêmement agressifs lorsqu'ils se sentent menacés, et attaquer en
+          groupe. Notre équipe certifiée intervient avec le matériel adapté pour
+          une destruction sécurisée et efficace.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <dl
+          class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+        >
+          <div class="flex flex-col">
+            <dt
+              class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900"
+            >
+              <Shield class="size-5 flex-none text-primary" />
+              Sécurité garantie
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+              <p class="flex-auto">
+                Les piqûres multiples de guêpes peuvent être dangereuses même
+                pour les personnes non allergiques. Nos techniciens sont équipés
+                de protections complètes et de matériel professionnel pour
+                intervenir sans risque, même sur les nids les plus difficiles
+                d'accès.
+              </p>
+              <p class="mt-6">
+                <a href="/methodes" class="text-sm/6 font-semibold text-primary"
+                  >Découvrir nos méthodes <span aria-hidden="true">→</span></a
+                >
+              </p>
+            </dd>
+          </div>
+          <div class="flex flex-col">
+            <dt
+              class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900"
+            >
+              <Bug class="size-5 flex-none text-primary" />
+              Élimination complète
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+              <p class="flex-auto">
+                Les produits grand public sont souvent insuffisants pour
+                éliminer totalement un nid. Nos techniciens utilisent des
+                produits biocides professionnels à effet immédiat qui
+                garantissent la destruction complète de la colonie, quel que
+                soit le type de nid ou son emplacement.
+              </p>
+              <p class="mt-6">
+                <a href="/tarifs" class="text-sm/6 font-semibold text-primary"
+                  >Nos tarifs <span aria-hidden="true">→</span></a
+                >
+              </p>
+            </dd>
+          </div>
+          <div class="flex flex-col">
+            <dt
+              class="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900"
+            >
+              <Clock class="size-5 flex-none text-primary" />
+              Intervention rapide
+            </dt>
+            <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
+              <p class="flex-auto">
+                Face à un nid de guêpes ou de frelons, la rapidité est
+                essentielle, surtout en présence d'enfants ou de personnes
+                allergiques. Notre équipe intervient dans les 24h dans tout le
+                département 77 et l'Île-de-France, avec un service d'urgence
+                disponible 7j/7.
+              </p>
+              <p class="mt-6">
+                <a href="/contact" class="text-sm/6 font-semibold text-primary"
+                  >Demander une intervention <span aria-hidden="true">→</span
+                  ></a
+                >
+              </p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-24">
+    <div class="mx-auto max-w-5xl lg:text-center">
+      <h3 class="text-base/7 font-semibold text-primary">
+        Les dangers des nids de guêpes
+      </h3>
+      <p
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance"
+      >
+        Pourquoi l'élimination d'un nid de guêpes nécessite l'intervention d'un
+        expert
+      </p>
+      <p class="mt-6 text-lg/8 text-gray-600">
+        Les guêpes deviennent très agressives lorsqu'elles sentent leur nid
+        menacé et peuvent attaquer en groupe. Contrairement aux abeilles, elles
+        peuvent piquer plusieurs fois, causant des douleurs intenses et
+        représentant un risque vital pour les personnes allergiques. Ne prenez
+        pas de risques inutiles avec votre santé et celle de votre entourage -
+        faites appel à nos techniciens certifiés qui disposent de l'équipement
+        adapté pour une intervention sécurisée.
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-5xl lg:text-center mt-16">
+      <h2 class="text-base/7 font-semibold text-primary">
+        Localisation des nids de guêpes
+      </h2>
+      <p
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance"
+      >
+        Comment identifier et localiser un nid de guêpes chez vous
+      </p>
+      <p class="mt-6 text-lg/8 text-gray-600">
+        Les nids de guêpes peuvent être trouvés dans divers endroits autour de
+        votre propriété : sous la toiture, dans les cache-moineaux, dans les
+        combles, les arbres, ou même dans la terre. Reconnaissables à leur
+        structure en "papier mâché" de couleur grise ou marron, ils sont
+        construits à partir de cellulose mélangée à la salive des guêpes. Si
+        vous observez un va-et-vient intense d'insectes rayés jaune et noir vers
+        un point précis, il s'agit probablement d'un nid. N'essayez pas de
+        l'inspecter de près - contactez immédiatement un professionnel.
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-5xl lg:text-center mt-16">
+      <h2 class="text-base/7 font-semibold text-primary">
+        Intervention professionnelle
+      </h2>
+      <p
+        class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance"
+      >
+        Une destruction efficace et durable des nids de guêpes
+      </p>
+      <p class="mt-6 text-lg/8 text-gray-600">
+        Notre équipe spécialisée utilise des méthodes et produits biocides
+        adaptés à chaque situation pour éliminer définitivement les nids de
+        guêpes. Contrairement aux solutions artisanales souvent dangereuses et
+        inefficaces, nous garantissons une intervention rapide et sécurisée,
+        généralement en moins de 24h. Nos techniciens, équipés de combinaisons
+        spéciales et d'outils professionnels, peuvent accéder aux emplacements
+        les plus difficiles et traiter tous types de nids, qu'ils soient dans
+        vos murs, sous terre ou en hauteur dans un arbre.
+      </p>
+    </div></div>
+  </div>
+<Faqs content={faqsSection} background="base" padding="base" />
 </Layout>
