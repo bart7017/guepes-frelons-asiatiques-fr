@@ -231,13 +231,13 @@
   }
 
   [data-theme="artemis"] {
-    --color-primary: #248f54;
+    --color-primary: #00ABB3;
     --color-primary-light: #b3b3b3;
     --color-primary-dark: #808080;
     --color-secondary: #1a663d;
-    --color-secondary-light: #248f54;
+    --color-secondary-light: #00ABB3;
     --color-secondary-dark: #004d2b;
-    --color-accent: #248f54;
+    --color-accent: #00ABB3;
     --color-background: #f5f5f5;
     --color-background-light: #ffffff;
     --color-background-dark: #333333;
@@ -247,9 +247,9 @@
     --color-body-base: #333333;
     --color-body-light: #333333;
     --color-body-dark: #ffffff;
-    --color-eyebrow: #248f54;
-    --color-eyebrow-light: #248f54;
-    --color-eyebrow-dark: #248f54;
+    --color-eyebrow: #00ABB3;
+    --color-eyebrow-light: #00ABB3;
+    --color-eyebrow-dark: #00ABB3;
     --color-input: var(--color-background-light);
     --color-input-light: var(--color-background-light);
     --color-input-dark: var(--color-background-dark);

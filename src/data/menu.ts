@@ -1,23 +1,33 @@
 // src/data/menu.ts
 
 export const headerMenu = [
-    { name: 'Theme Info', link: '/theme-info' },
-    { name: 'Our Team', link: '/team' },
-    { name: 'Blog', link: '/blog' },
-    { name: 'Style-Guide', link: '/style-guide', showArrow: false,
+    { name: 'Présentation', link: '/presentation' },
+    { name: 'Nuisible', link: '/nuisible' , showArrow: false,
         children: [
-            { name: 'Typography', link: '/style-guide#typography' },
-            { name: 'Colors', link: '/style-guide#colors' },
-            { name: 'Links', link: '/style-guide#links' },
-            { name: 'Buttons', link: '/style-guide#buttons' },
-            { name: 'Forms', link: '/style-guide#forms' },
-            { name: 'Lists', link: '/style-guide#lists' },
-        ]
-    }
+            { name: 'Guêpe', link: '/guepe' },
+            { name: 'Abeille', link: '/abeille' },
+            { name: 'Frelon', link: '/frelon' },
+            { name: 'Frelon asiatique', link: '/frelon-asiatique' },
+            { name: 'Bourdon', link: '/bourdon' },
+            { name: 'Dératisation', link: '/dératisation' },
+            { name: 'Chenille processionnaire', link: '/chenille-processionnaire' },
+        ]},
+    { name: 'Présentation', link: '/presentation' },
+    { name: 'Présentation', link: '/presentation' },
+    { name: 'Blog', link: '/blog' },
+    
 ];
 
 export const footerMenu = [
-    { name: 'Style Guide', link: '/style-guide' },
+    { name: 'Présentation', link: '/presentation' },
+    { name: 'Guêpe', link: '/guepe' },
+    { name: 'Abeille', link: '/abeille' },
+    { name: 'Frelon', link: '/frelon' },
+    { name: 'Frelon asiatique', link: '/frelon-asiatique' },
+    { name: 'Bourdon', link: '/bourdon' },
+    { name: 'Dératisation', link: '/dératisation' },
+    { name: 'Chenille processionnaire', link: '/chenille-processionnaire' },
+    { name: 'Blog', link: '/blog' },
 ];
 
 export const legalMenu = [
